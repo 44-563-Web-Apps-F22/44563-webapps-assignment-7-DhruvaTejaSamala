@@ -28,6 +28,9 @@
   <div class="container border bg-success" style="padding-top: 10px; color: rgb(255, 252, 252);">
       <p id="help">Help report.</p>
   </div><br>
+  <div class="container text-center">
+    <button class="btn btn-success" type="submit" onclick="resetGame()">Reset</button>
+</div>
 
   <div class="container"> 
     <div class="image-row d-flex justify-content-center">
@@ -121,7 +124,8 @@
         var chestCount=0
         var score=0
         var lastCheck=12
-        var treasureLocation=Math.floor(Math.Random()* 25)
+        var treasureLocation=Math.floor(Math.random()* 25)
+        console.log(treasureLocation)
         function resetGame() {
                 treasureLocation = Math.floor(Math.random() * 25)
                 while(treasureLocation == 12) {
@@ -131,9 +135,9 @@
                 score = 0
                 document.getElementById("chests").innerHTML = "Number of chests checked is zero"
                 document.getElementById("score").innerHTML = "Score is unknown"
-                for(let i = 0; i < 24; i++) {
+                for(let i = 0; i < 25; i++) {
                     if(i != 12) {
-                        document.getElementById(ids[i]).src = "treasure_chest.png"
+                        document.getElementById(ids[i]).src = "treasureChest.png"
                     }
                 }
             }
